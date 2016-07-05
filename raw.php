@@ -1,6 +1,6 @@
 <?php
 	$db = new mysqli("localhost","steamidconvert",null,"steamidconvert");
-	$apikey = "";
+	include("apikey.php");
 
 	function toCommunityID($id) {
 		if (preg_match("/^STEAM_/",$id)) {

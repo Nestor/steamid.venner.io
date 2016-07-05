@@ -1,34 +1,10 @@
-var animating_anchor = 0;
-function onResize() {
-	if ($(document).outerWidth() < 829) {
-		if (animating_anchor == 0 || animating_anchor == 2) {
-			animating_anchor = 1;
-			$("#anchor").stop().animate({
-				"opacity": 0
-			},250,function() {
-				animating_anchor = 0;
-			});
-		}
-	} else {
-		if (animating_anchor == 0 || animating_anchor == 1) {
-			animating_anchor = 2;
-			$("#anchor").stop().animate({
-				"opacity": 1
-			},250,function() {
-				animating_anchor = 0;
-			});
-		}
-	}
-}
-$(window).resize(onResize);
-
 $("#input").focus();
 
 window.onpopstate = function(e) {
 	if (e.state) {
 		location.reload();
 	}
-}
+};
 
 function fnDeSelect() {
 	if (document.selection) document.selection.empty(); 
